@@ -16,7 +16,7 @@ export default pool
 
 export async function query<T = unknown>(
   sql: string,
-  values?: unknown[]
+  values?: any[]
 ): Promise<T[]> {
   const [rows] = await pool.execute(sql, values)
   return rows as T[]
